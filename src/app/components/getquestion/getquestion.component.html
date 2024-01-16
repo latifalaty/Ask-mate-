@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-6 mb-4" *ngFor="let question of questions">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h5 class="m-0 font-weight-bold text-primary"> Question by {{ question.userDetails?.firstName }} {{
+          question.userDetails?.lastName }}</h5>
+        <h6 class="m-0 font-weight-bold text-info"> Question in {{ question.categorie }}</h6>
+      </div>
+      <div class="card-body">
+        <p>{{ question.titre }}</p>
+        <p>{{ question.contenu }}</p>
+        <button type="button" class="btn btn-outline-primary" (click)="navigateToReponse()">Answer</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

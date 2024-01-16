@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-8">
+        <h2 class="mb-4">Submit Response</h2>
+        <!-- Display question details -->
+        <div *ngIf="question">
+          <h3>{{ question.titre }}</h3>
+          <p>{{ question.contenu }}</p>
+        </div>
+  
+        <form (ngSubmit)="submitResponse()">
+          <div class="form-group">
+            <label for="responseContent">Your Response:</label>
+            <textarea class="form-control" id="responseContent" name="responseContent" [(ngModel)]="newResponseContent" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Response</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

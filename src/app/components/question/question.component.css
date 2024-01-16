@@ -1,0 +1,70 @@
+.logo img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* admin-dashboard.component.css */
+.dashboard-content {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Additional styles for content area */
+  }
+  main {
+    padding: 20px;
+}
+
+.section-title {
+    color: rgb(41, 46, 41);
+}
+
+table {
+    background-color: white;
+    color: black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(43, 214, 43, 0.705);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: green;
+    color: white;
+}
+
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+.icon{
+    width: 5%;
+    height: 50%;
+}
+
+

@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Left column with the form (6/12) -->
+            <form [formGroup]="addQuestionForm" (ngSubmit)="addQuestion()" novalidate>
+
+                <!-- ... -->
+
+                <!-- Title input -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a title" formControlName="titre"
+                                required></textarea>
+                            <label for="titre">Title</label>
+                        </div>
+                        <div
+                            *ngIf="addQuestionForm.get('titre')?.errors?.['required'] && addQuestionForm.get('titre').touched" class="text-red-600">
+                            Title is required.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comments input -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" formControlName="contenu"
+                                style="height: 100px" required></textarea>
+                            <label for="contenu">Comments</label>
+                        </div>
+                        <div
+                            *ngIf="addQuestionForm.get('contenu')?.errors?.['required'] && addQuestionForm.get('contenu').touched" class="text-red-600">
+                            Comments are required.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category input -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Floating label select example"
+                                formControlName="categorie" required>
+                                <option value="" disabled>Select a category</option>
+                                <option value="Angular">Angular</option>
+                                <option value="React">React</option>
+                                <option value="Vue">Vue</option>
+                            </select>
+                            <label for="categorie">Category</label>
+                        </div>
+                        <div
+                            *ngIf="addQuestionForm.get('categorie')?.errors?.['required'] && addQuestionForm.get('categorie').touched">
+                            Category is required.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... -->
+
+
+
+                <!-- Submit button -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <button type="submit" [disabled]="addQuestionForm.invalid" class="btn btn-primary">
+                            Create Question
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success message -->
+                <div *ngIf="creationSuccess" class="alert alert-primary" role="alert">
+                    <strong>Success!</strong> The question has been added.
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <!-- Right empty column (6/12) -->
+        </div>
+    </div>
+</div>

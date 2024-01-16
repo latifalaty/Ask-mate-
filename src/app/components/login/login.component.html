@@ -1,0 +1,43 @@
+<app-header></app-header>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <!-- Form start here -->
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <!-- Email input with validation feedback -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="email">Email address</label>
+            <input type="email" id="email" name="email" ngModel required email #email="ngModel" class="form-control"
+              [ngClass]="{'is-invalid': email.invalid && email.touched}" placeholder="name@example.com">
+            <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+              <span *ngIf="email.errors?.['required']">Email is required.</span>
+              <span *ngIf="email.errors?.['email']">Please enter a valid email.</span>
+            </div>
+          </div>
+
+          <!-- Password input with validation feedback -->
+          <div class="form-outline mb-3">
+            <label class="form-label" for="inputPassword4">Password</label>
+            <input type="password" id="inputPassword4" name="pwd" ngModel required minlength="7" #pwd="ngModel"
+              class="form-control" placeholder="Password">
+
+
+          </div>
+
+          <!-- Login button and user not found message -->
+          <div class="text-center text-lg-start mt-4 pt-2">
+
+            <button type="submit" class="btn btn-primary gradient-button" [disabled]="loginForm.invalid"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p *ngIf="notExist" class="text-danger mt-2">User not found</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

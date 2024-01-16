@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngIf="searchResults.length > 0; else noResults">
+            <div class="col-lg-6 mb-4" *ngFor="let result of searchResults">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-info">The question existe {{
+                            result.categorie }}</h6>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ result.titre }}</p>
+                        <p>{{ result.contenu }}</p>
+                        <!-- Add any other information you want to display for each question here -->
+                    </div>
+
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #noResults>
+            <div class="col-lg-12 text-center">
+                <p>Can't find any questions. You can publish your question or ask our chatbot.</p>
+                <div class="mt-3">
+                    <button class="btn btn-primary" (click)="navigateToChatbot()">Ask Chatbot</button>
+                    <button class="btn btn-success ml-2" (click)="navigateToPublishQuestion()">Publish
+                        Question</button>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

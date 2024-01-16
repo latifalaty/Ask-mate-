@@ -1,0 +1,33 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+.gradient-button {
+    max-width: 100%;
+    background: linear-gradient(to right, #79b3ed, #350cc9c7);
+    /* Dégradé de couleur */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Lorsque le curseur survole le bouton */
+.gradient-button:hover {
+    background: linear-gradient(to right, #350cc9c7, #79b3ed);
+    /* Inversion des couleurs du dégradé */
+}

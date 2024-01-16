@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-10 offset-md-1">
+          <br>
+              <div class="card">
+                  <h4 class="card-header center text-primary" style="text-align: center;">Chat With Helpy</h4>
+                  <div class="card-body">
+                    <form [formGroup]="queryFormGroup"  (ngSubmit)="handleAskGPT()">
+                      <div class="row">
+                          <div class="col-md-10 offset-md-1">
+                              <div class="frame-box">
+                                  <div *ngFor="let message of messages">
+                                      <p class="card-text padding" >
+                                        <ng-container *ngIf="message.role === 'user'; else userRoleBlock">
+                                          You : {{ message.content }}
+                                        </ng-container>
+                                        <ng-template #userRoleBlock>
+                                          Helpy : {{ message.content }}
+                                        </ng-template>
+                                      </p>
+                                  </div>
+                              </div>
+                              <br>
+                                  <textarea name="chat" placeholder="Enter your Question" formControlName="query" class="form-control" id="" cols="20" rows="3"></textarea>
+                                  <br>
+                                  <div class="d-flex justify-content-end"><button class="btn btn-primary">Send</button></div>
+                                  </div>
+                                  <div class="col-md-2">
+                                  </div>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>

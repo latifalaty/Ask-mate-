@@ -1,0 +1,14 @@
+.icon{
+    width: 5%;
+    height: 50%;
+}
+.logo{
+    width: 20%;
+    float: right; /* Flotter l'image à droite */
+    margin-left: 20px ; /* Espacement à gauche de l'image */
+ 
+}
+
+body{
+    background-color: rgba(212, 208, 208, 0.05);
+}

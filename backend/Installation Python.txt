@@ -1,0 +1,17 @@
+
+pip install spacy
+
+pip install sickit-learn
+
+pip install sys
+pip install json
+
+
+pip install pymongo 
+ 
+pip install requests
+
+python -m spacy download fr_core_news_sm
+
+
+npm i bootstrap-icons bootstrap
